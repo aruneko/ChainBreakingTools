@@ -27,7 +27,7 @@ jobs:
         run: echo "TAG_NAME=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
       - name: rename jars
         run: |
-          mkdir build/libs
+          mkdir -p build/libs
           mv mods/ChainDigger/build/reobfJar/output.jar build/libs/ChainDigger-forge-${MC_VERSION}-${TAG_NAME}.jar
           mv mods/ChainMiner/build/reobfJar/output.jar build/libs/ChainMiner-forge-${MC_VERSION}-${TAG_NAME}.jar
           mv mods/ChainWoodCutter/build/reobfJar/output.jar build/libs/ChainWoodCutter-forge-${MC_VERSION}-${TAG_NAME}.jar
